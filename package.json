@@ -1,0 +1,27 @@
+{
+  "name": "api-personal-cabinet",
+  "version": "0.1.0",
+  "description": "API from personal cabinets sites Mariupolgaz and Azovgaz",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Graalex/api-personal-cabinet.git"
+  },
+  "author": "Grigorchuk Aleksandr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Graalex/api-personal-cabinet/issues"
+  },
+  "homepage": "https://github.com/Graalex/api-personal-cabinet#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "node-firebird": "^0.8.4",
+    "windows-1251": "^1.0.0"
+  }
+}
