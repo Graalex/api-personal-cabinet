@@ -17,5 +17,7 @@ module.exports = {
 	server: {
 		listenPort: 1001,
 		securePort: 10433
-	}
+	},
 };
+
+module.exports.API_ENDPOINT = '/personal-cabinet/v1';
