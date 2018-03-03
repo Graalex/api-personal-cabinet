@@ -21,6 +21,7 @@
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.2",
+    "jsonwebtoken": "^8.2.0",
     "node-firebird": "^0.8.4",
     "windows-1251": "^1.0.0"
   }

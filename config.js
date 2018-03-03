@@ -18,6 +18,7 @@ module.exports = {
 			{owner: 'ООО АЗОВГАЗ', key: '8SHYVlmUGYMv6ViGRd73'},
 			{owner: 'ПАО Мариупольгаз', key: 'EOhPygF5iyYHjWencvFf'},
 		],
+		secret: 'Wow my secret word',
 	},
 	server: {
 		listenPort: 1001,
