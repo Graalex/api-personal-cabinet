@@ -22,9 +22,8 @@ module.exports = {
 		secret: process.env.SECRET,
 	},
 	server: {
-		listenPort: 1001,
-		securePort: 10433
+		listenPort: process.env.APP_PORT
 	},
 };
 
-module.exports.API_ENDPOINT = '/personal-cabinet/v1';
+module.exports.API_ENDPOINT = process.env.API_ENDPOINT;

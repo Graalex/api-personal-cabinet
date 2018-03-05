@@ -60,3 +60,9 @@ typings/
 # WebStorm
 .idea
 
+# Configuration
+.env
+
+# ZIP archive for deploy
+*.zip
+
