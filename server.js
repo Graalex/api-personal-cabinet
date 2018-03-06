@@ -17,6 +17,7 @@ app.use(cors({
 	methods: ['GET', 'POST'],
 	optionsSuccessStatus: 204,
 }));
+
 app.use(bodyParser.json());
 
 app.use(API_ENDPOINT, accountRouter);
