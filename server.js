@@ -12,12 +12,14 @@ const metersRouter = require('./routers/meters');
 const authRouter = require('./routers/auth');
 const API_ENDPOINT = require('./config').API_ENDPOINT;
 
+/*
 app.use(cors({
 	origin: ['http://office.azovgaz.com.ua', 'http://office.margaz.com.ua'],
 	methods: ['GET', 'POST'],
 	optionsSuccessStatus: 204,
 }));
-
+*/
+app.use(cors());
 app.use(bodyParser.json());
 
 app.use(API_ENDPOINT, accountRouter);
