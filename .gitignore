@@ -54,14 +54,8 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
-.env
-
 # WebStorm
 .idea
-
-# Configuration
-.env
 
 # ZIP archive for deploy
 *.zip
