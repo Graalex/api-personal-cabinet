@@ -2,7 +2,10 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = require('./config').server.listenPort;
+const morgan = require('morgan');
+const rfs = require('rotating-file-stream');
+const fs = require('fs');
+const path = require('path');
 
 const accountRouter = require('./routers/account');
 const allocationsRouter = require('./routers/allocations');
@@ -10,7 +13,16 @@ const subsidiesRouter = require('./routers/subsidies');
 const paymentsRouter = require('./routers/payments');
 const metersRouter = require('./routers/meters');
 const authRouter = require('./routers/auth');
+
 const API_ENDPOINT = require('./config').API_ENDPOINT;
+const port = require('./config').server.listenPort;
+
+const logDir = path.join(__dirname, 'logs');
+fs.existsSync(logDir) || fs.mkdirSync(logDir);
+
+logStream = rfs('access.log', {interval: '7d', path: logDir});
+
+app.use(morgan('combined', {stream: logStream}));
 
 app.use(cors({
 	origin: ['http://office.azovgaz.com.ua', 'http://office.margaz.com.ua'],
