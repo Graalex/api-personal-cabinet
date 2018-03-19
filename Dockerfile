@@ -1,6 +1,9 @@
 FROM node:carbon
 
-MAINTAINER grigorchuk68 <aleksandr.grigorchuk@gmail.com>
+LABEL version="0.1.2" \
+			description="API для личного кабинета" \
+			vendor="ПАО Мариупольгаз" \
+			maintainer="Grigorchuk Aleksandr <aleksandr.grigorchuk@gmail.com>"
 
 COPY . /api-personal-cabinet
 
