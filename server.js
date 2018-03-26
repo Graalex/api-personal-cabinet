@@ -24,14 +24,12 @@ logStream = rfs('access.log', {interval: '7d', path: logDir});
 
 app.use(morgan('combined', {stream: logStream}));
 
-/*
 app.use(cors({
 	origin: ['http://office.azovgaz.com.ua', 'http://office.margaz.com.ua'],
 	methods: ['GET', 'POST'],
 	optionsSuccessStatus: 204,
 }));
-*/
-app.use(cors());
+
 app.use(bodyParser.json());
 
 app.use(API_ENDPOINT, accountRouter);
