@@ -13,6 +13,8 @@ const subsidiesRouter = require('./routers/subsidies');
 const paymentsRouter = require('./routers/payments');
 const metersRouter = require('./routers/meters');
 const authRouter = require('./routers/auth');
+const beneficiariesRouter = require('./routers/beneficiaries');
+const equipmentsRouter = require('./routers/equipments');
 
 const API_ENDPOINT = require('./config').API_ENDPOINT;
 const port = require('./config').server.listenPort;
@@ -33,6 +35,8 @@ app.use(cors({
 app.use(bodyParser.json());
 
 app.use(API_ENDPOINT, accountRouter);
+app.use(API_ENDPOINT, beneficiariesRouter);
+app.use(API_ENDPOINT, equipmentsRouter);
 app.use(API_ENDPOINT, allocationsRouter);
 app.use(API_ENDPOINT, subsidiesRouter);
 app.use(API_ENDPOINT, paymentsRouter);
