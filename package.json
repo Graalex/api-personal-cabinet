@@ -1,6 +1,6 @@
 {
   "name": "api-personal-cabinet",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "API from personal cabinets sites Mariupolgaz and Azovgaz",
   "main": "server.js",
   "scripts": {
