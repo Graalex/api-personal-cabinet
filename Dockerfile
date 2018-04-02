@@ -11,6 +11,6 @@ WORKDIR /api-personal-cabinet
 
 RUN npm install
 
-EXPOSE 10001
+EXPOSE 10002
 
 CMD ["npm", "start"]
