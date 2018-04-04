@@ -9,7 +9,7 @@ router.get('/beneficiaries/:ls', (req, res) => {
 	verifyRequest(authField, ls)
 		.then(() => getBeneficiaries(ls))
 		.then(result => res.json(result))
-		.catch (err => res.json(err));
+		.catch (err => res.status(err.status).json(err));
 });
 
 module.exports = router;
