@@ -46,7 +46,7 @@ app.use(API_ENDPOINT, metersRouter);
 app.use(API_ENDPOINT, authRouter);
 
 app.all('*', (req, res) => {
-	res.json({
+	res.status(403).json({
 		status: 403,
 		message: 'Отказано в доступе.',
 	});

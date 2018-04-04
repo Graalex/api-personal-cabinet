@@ -9,7 +9,7 @@ router.get('/payments/:ls', (req, res) => {
 	verifyRequest(authField, ls)
 		.then(() => getPayments(ls))
 		.then(result => res.json(result))
-		.catch(err => res.json(err));
+		.catch(err => res.status(err.status).json(err));
 });
 
 module.exports = router;
