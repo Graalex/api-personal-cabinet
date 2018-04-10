@@ -1,7 +1,8 @@
 /**
  * config.js -- конфигурация приложения
  */
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({path: path.join(__dirname, 'env/.env')});
 
 module.exports = {
 	db: {
