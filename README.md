@@ -1,4 +1,7 @@
 # api-personal-cabinet
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Graalex/api-personal-cabinet/blob/master/LICENSE)
+![GitHub tag](https://img.shields.io/github/tag/expressjs/express.svg)
+
 API для личного кабинета ООО "АЗОВГАЗ" и ПАО "Мариупольгаз".
 
 ## Установка
@@ -51,3 +54,44 @@ sudo docker run -d --name api-cabinet \
 	--env-file [путь к env] \
 	margaz/api-personal-cabinet
 ```
+
+## Использование
+### Авторизация
+`POST https://api.margaz.com.ua/personal-cabinet/v1/auth`
+В теле запроса передаем данные
+```json
+{
+  "ls": 1, // Номер лицевого счета
+  "family": "фамилия", // Фамилия абонента (без учета регистра символов)
+  "key": "VtF5cE" // ключ приложения
+}
+```
+В случае совпадения номера лицевого счета, фамилии абонента и ключа приложения сервис вернет ответ:
+```json
+{
+"status": 200,
+"message": "Успешное завершение запроса",
+"data": "IsInR5c.0JLQk9CQ.uBweKh0U7h"
+}
+```
+Поле `data` содержит авторизационный токен со сроком жизни 1 час
+Этот токен должен быть вставлен в заголовок `Authorization` следующих запросов.
+Пример: `Authorization: Bearer IsInR5c.0JLQk9CQ.uBweKh0U7h`
+
+### Общая информация о лицевом счете
+`GET https://api.margaz.com.ua/personal-cabinet/v1/accounts/[номер лицевого счета]`
+
+### Информация о газовых приборах
+`GET https://api.margaz.com.ua/personal-cabinet/v1/equipments/[номер лицевого счета]`
+
+### Информация о льготах
+`GET https://api.margaz.com.ua/personal-cabinet/v1/beneficiaries/[номер лицевого счета]`
+
+### Информация о начислениях (свод помесячно)
+`GET https://api.margaz.com.ua/personal-cabinet/v1/allocations/[номер лицевого счета]`
+
+### Информация о платежах (свод помесячно)
+`GET https://api.margaz.com.ua/personal-cabinet/v1/payments/[номер лицевого счета]`
+
+### Информация о субсидиях (свод помесячно)
+`GET https://api.margaz.com.ua/personal-cabinet/v1/subsidies/[номер лицевого счета]`
