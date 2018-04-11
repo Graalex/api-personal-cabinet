@@ -60,3 +60,10 @@ typings/
 # ZIP archive for deploy
 *.zip
 
+# Certifications files
+cert
+
+# dotenv files
+env
+.env
+.env.*

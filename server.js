@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const https = require('https');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
@@ -50,6 +51,9 @@ app.all('*', (req, res) => {
 	});
 });
 
-app.listen(port , () => {
-	console.info(`API Personal Cabinet Service start at ${port} port...`);
-});
+const server = https.createServer({
+	key: fs.readFileSync(path.resolve(__dirname, 'cert/privkey.pem')),
+	cert: fs.readFileSync(path.resolve(__dirname, 'cert/fullchain.pem')),
+}, app);
+
+server.listen(port);
