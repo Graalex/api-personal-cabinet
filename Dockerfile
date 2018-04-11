@@ -9,12 +9,8 @@ COPY . /api-personal-cabinet
 
 WORKDIR /api-personal-cabinet
 
-RUN ["mkdir", "/logs", "/env", "/cert"]
-
 RUN npm install
 
 EXPOSE 443
-
-VOLUME ["/logs"]
 
 CMD ["npm", "start"]
